@@ -56,7 +56,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://pet-finder-g2gi.onrender.com"
+    "https://backend-pet-finder-kyyc.onrender.com"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -69,7 +69,11 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:1234"],
+    origin: [
+      "https://backend-pet-finder-kyyc.onrender.com",
+      "http://localhost:5173",
+      "http://localhost:1234",
+    ],
     methods: "GET, POST, PUT, DELETE, OPTIONS",
     allowedHeaders: "Content-Type, Authorization",
   })
