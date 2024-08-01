@@ -1,7 +1,6 @@
 import * as express from "express";
 import * as cors from "cors";
 import * as dotenv from "dotenv";
-import * as path from "path";
 
 //
 //recursos
@@ -39,7 +38,6 @@ import {
 
 import { createReport } from "./controllers/reportControllers";
 import { Auth } from "./models/auth";
-import { where } from "sequelize";
 
 //const
 dotenv.config();
@@ -53,29 +51,13 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://pet-finder-21a3b.web.app"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
-});
 app.use(express.json());
 
 app.use(
   cors({
-    origin: [
-      "https://pet-finder-21a3b.web.app",
-      "http://localhost:5173",
-      "http://localhost:1234",
-    ],
-    methods: "GET, POST, PUT, DELETE, OPTIONS",
-    allowedHeaders: "Content-Type, Authorization",
+    origin: ["https://pet-finder-21a3b.web.app", "http://localhost:5173"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
