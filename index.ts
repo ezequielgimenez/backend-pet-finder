@@ -56,7 +56,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://backend-pet-finder-kyyc.onrender.com"
+    "https://pet-finder-21a3b.web.app"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -70,7 +70,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://backend-pet-finder-kyyc.onrender.com",
+      "https://pet-finder-21a3b.web.app",
       "http://localhost:5173",
       "http://localhost:1234",
     ],
@@ -331,7 +331,7 @@ app.post("/forgot-password", async (req, res) => {
       );
 
       // Crear el enlace de restablecimiento
-      const resetLink = `http://localhost:5173/change-password/token/${token}`;
+      const resetLink = `https://pet-finder-21a3b.web.app/change-password/token/${token}`;
 
       // Enviar el correo electrónico
       await sendResetEmail(email, resetLink);
