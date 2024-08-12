@@ -13,8 +13,10 @@
     "nodemon": "^3.1.0",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.0",
+    "pre-commit": "^1.2.2",
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
+    "rimraf": "^6.0.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.1.0",
     "url": "^0.11.0",
@@ -23,8 +25,8 @@
   },
   "scripts": {
     "dev:back": "nodemon --watch index.ts --exec ts-node index.ts",
-    "build:back": "tsc",
-    "build": "npm run build:back",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
     "start": "node ./be-dist/index.js"
   },
   "dependencies": {
@@ -48,5 +50,10 @@
     "resend": "^3.5.0",
     "sequelize": "^6.37.3",
     "typescript": "^5.4.5"
-  }
+  },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ]
 }
