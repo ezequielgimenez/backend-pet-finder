@@ -391,3 +391,7 @@ app.post("/reset-password", async (req, res) => {
     });
   }
 });
+
+export const handler = async (req, res) => {
+  res.status(200).json({ message: "Hello World" });
+};
