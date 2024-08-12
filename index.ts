@@ -14,7 +14,7 @@ import { Resend } from "resend";
 
 //
 //asociaciones
-import { User, Mascota, Report } from "../associations/associations";
+import { User, Mascota, Report } from "./associations/associations";
 
 //
 // controllers
@@ -24,9 +24,9 @@ import {
   myMiddlewareUser,
   getMe,
   updatePassword,
-} from "../controllers/authControllers";
+} from "./controllers/authControllers";
 
-import { updateUser, verifyEmail } from "../controllers/userControllers";
+import { updateUser, verifyEmail } from "./controllers/userControllers";
 
 import {
   actualizarMascota,
@@ -34,10 +34,10 @@ import {
   eliminarPet,
   mascotasCerca,
   myPetsAll,
-} from "../controllers/mascotaControllers";
+} from "./controllers/mascotaControllers";
 
-import { createReport } from "../controllers/reportControllers";
-import { Auth } from "../models/auth";
+import { createReport } from "./controllers/reportControllers";
+import { Auth } from "./models/auth";
 
 //const
 dotenv.config();
