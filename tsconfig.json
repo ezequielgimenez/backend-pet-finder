@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": "dist"
+    "outDir": "be-dist"
   },
   "exclude": ["node_modules"],
   "include": ["./**/*.ts"]
