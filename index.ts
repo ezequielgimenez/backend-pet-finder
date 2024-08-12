@@ -42,7 +42,7 @@ import { Auth } from "./models/auth";
 //const
 dotenv.config();
 const app = express();
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 //
 
