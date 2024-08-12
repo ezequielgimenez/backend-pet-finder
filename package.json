@@ -27,6 +27,7 @@
     "dev:back": "nodemon --watch index.ts --exec ts-node index.ts",
     "build": "rimraf dist && tsc",
     "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "start": "node ./be-dist/index.js"
   },
   "dependencies": {
