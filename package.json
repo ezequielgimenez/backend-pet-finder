@@ -26,8 +26,6 @@
   "scripts": {
     "dev:back": "nodemon --watch index.ts --exec ts-node index.ts",
     "build": "rimraf dist && tsc",
-    "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add dist",
     "start": "node ./be-dist/index.js"
   },
   "dependencies": {
@@ -51,10 +49,5 @@
     "resend": "^3.5.0",
     "sequelize": "^6.37.3",
     "typescript": "^5.4.5"
-  },
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ]
+  }
 }
