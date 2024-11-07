@@ -38,6 +38,7 @@ import {
 
 import { createReport } from "../controllers/reportControllers";
 import { Auth } from "../models/auth";
+import { Request, Response } from "express";
 
 //const
 dotenv.config();
@@ -45,7 +46,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 //
-
+app.get("/", (_req: Request, res: Response) => {
+  return res.send("Express Typescript on Vercel");
+});
 //
 //use
 app.use(bodyParser.json({ limit: "50mb" }));
