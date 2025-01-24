@@ -46,10 +46,13 @@ const app = express();
 const port = process.env.PORT || 3000;
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 //
-app.get("/api", (_req: Request, res: Response) => {
-  console.log("Hola hiciste un get de /api");
-  return res.send("Express Typescript on Vercel");
+
+// Endpoint Main
+app.get("/api", (req: Request, res: Response) => {
+  console.log("Endpoint get");
+  res.json({ message: "¡Hola desde Express con TypeScript en Vercel!" });
 });
+
 //
 //use
 app.use(bodyParser.json({ limit: "50mb" }));
