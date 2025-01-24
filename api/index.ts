@@ -47,6 +47,7 @@ const port = process.env.PORT || 3000;
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 //
 app.get("/api", (_req: Request, res: Response) => {
+  console.log("Hola hiciste un get de /api");
   return res.send("Express Typescript on Vercel");
 });
 //
